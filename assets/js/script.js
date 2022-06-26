@@ -42,7 +42,7 @@ function quizTimer(){
     // initial time in timer if finished early add a difficulty setting that will allow user to change time
     var timeInterval = setInterval(function(){
         timeLeft -=1;
-        timerE1.textContent = timeLeft;
+        timerE1.textContent = "Time Left: " + timeLeft;
         if(timeLeft === 0){
             // set action here for when time runs out 
             clearInterval(timeInterval);
@@ -52,3 +52,12 @@ function quizTimer(){
 }
 // set start quiz button to start timer
 // wrong answers on quiz questions subtract from time left
+// highscroes window open and close
+function openHighScores(){
+    document.getElementById('highScores').style.width = "250px";
+}
+function closeHighScores(){
+    document.getElementById('highScores').style.width = '0px';
+}
+document.getElementById('openButton').addEventListener("click", openHighScores);
+document.getElementById('closeScore').addEventListener("click", closeHighScores);
