@@ -5,10 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" src="./assets/css/style.css">
-    <title>Document</title>
+    <title>Coding Quiz</title>
 </head>
 <body>
-    
+    <!-- Highscores Container -->
+    <div class="highScores">
+        <a class="closeScore">&#10006;</a>
+        <ul id="scoreList"></ul>
+    </div>
+    <span>HighScores</span>
+    <!-- timerContainer -->
+    <div id="timer">
+        <h3>Time Remaining:</h3>
+        <h3 id="timeCount"></h3>
+    </div>
+    <!-- main quiz content -->
+    <main id="quizContainer">
+        <h1 id="quizHead">Welcome To the Coding Quiz</h1>
+        <div id="questionAnswers">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </main>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
