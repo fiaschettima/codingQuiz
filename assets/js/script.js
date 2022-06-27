@@ -1,62 +1,54 @@
+// Variables
 var timerE1 = document.getElementById('timeCount');
 var timeLeft = 120;
 var score = 0;
+var questionCount = 0;
+var startStyle ={
+    "display": "none",
+    // "transition": "2s" ------ doesnt work find new solution
+}
+var quizContainer = document.getElementById('quizContainer');
+var questionContent = document.querySelector('#quizHead');
+var Ans1 = document.querySelector('#btn1');
+var Ans2 = document.querySelector('#btn2');
+var Ans3 = document.querySelector('#btn3');
+var Ans4 = document.querySelector('#btn4');
 var quizQuestions = [
     {
-        Q2: 'question',
-        Q2Ans: [
-                {text :'option 1', correct :true },
-                {text :'option 2', correct :false },
-                {text :'option 3', correct :false },
-                {text :'option 4', correct :false}
-            ],
+        Q: 'question one',
+        c1: 'answer1',
+        c2: 'answer2',
+        c3: 'answer3',
+        c4: 'answer4',
+        answer: 2,
     },
     {
-        Q3: 'question',
-        Q3Ans: [
-                {text :'option 1', correct :true },
-                {text :'option 2', correct :false },
-                {text :'option 3', correct :false },
-                {text :'option 4', correct :false}
-            ],
+        Q: 'question two',
+        c1: 'answer1',
+        c2: 'answer2',
+        c3: 'answer3',
+        c4: 'answer4',
+        answer: 2,
     },
     {
-        Q4: 'question',
-        Q4Ans: [
-                {text :'option 1', correct :true },
-                {text :'option 2', correct :false },
-                {text :'option 3', correct :false },
-                {text :'option 4', correct :false}
-            ],
+        Q: 'question three',
+        c1: 'answer1',
+        c2: 'answer2',
+        c3: 'answer3',
+        c4: 'answer4',
+        answer: 2,
     },
     {
-        Q5: 'question',
-        Q5Ans: [
-                {text :'option 1', correct :true },
-                {text :'option 2', correct :false },
-                {text :'option 3', correct :false },
-                {text :'option 4', correct :false}
-            ],
-    },
-    {
-        Q5: 'question',
-        Q5Ans: [
-                {text :'option 1', correct :true },
-                {text :'option 2', correct :false },
-                {text :'option 3', correct :false },
-                {text :'option 4', correct :false}
-            ],
-    },
-    {
-        Q6: 'question',
-        Q6Ans: [
-                {text :'option 1', correct :true },
-                {text :'option 2', correct :false },
-                {text :'option 3', correct :false },
-                {text :'option 4', correct :false}
-            ],
-    },
+        Q: 'question four',
+        c1: 'answer1',
+        c2: 'answer2',
+        c3: 'answer3',
+        c4: 'answer4',
+        answer: 2,
+    }
 ];
+var currentQuestion = Math.floor(Math.random() * quizQuestions.length);
+// Functions
 function quizTimer(){
     // initial time in timer if finished early add a difficulty setting that will allow user to change time
     var timeInterval = setInterval(function(){
@@ -69,7 +61,6 @@ function quizTimer(){
     },1000);
     // sets time to 1s since js runs in ms
 }
-// wrong answers on quiz questions subtract from time left
 
 // highscroes window open and close
 function openHighScores(){
@@ -80,17 +71,21 @@ function closeHighScores(){
     document.getElementById('highScores').style.width = '0vw';
 }
 // startup screen function and vars
-var startStyle ={
-    "display": "none",
-    // "transition": "2s" ------ doesnt work find new solution
+function changeQuestion(){
 }
 
 function startquiz(){
     var startingContainer = document.getElementById("startup-overlay");
     Object.assign(startingContainer.style, startStyle);
     quizTimer();
+    questionContent.textContent = quizQuestions[currentQuestion].Q;
+    Ans1.textContent = quizQuestions[currentQuestion].c1
+    Ans2.textContent = quizQuestions[currentQuestion].c2
+    Ans3.textContent = quizQuestions[currentQuestion].c3
+    Ans4.textContent = quizQuestions[currentQuestion].c4
 }
 // event listeners
 document.getElementById('openButton').addEventListener("click", openHighScores);
 document.getElementById('closeScore').addEventListener("click", closeHighScores);
 document.getElementById('start-button').addEventListener("click", startquiz);
+// add event listener for quizcontiner div 

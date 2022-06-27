@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&display=swap');
 :root{
     --mainColor1: #2CF6B3;
     --mainColor1fade: #b1ffe5; 
@@ -9,6 +10,7 @@
 }
 *{
     box-sizing: border-box;
+    font-family: 'Changa', sans-serif;
 }
 body{
     background-color: var(--mainColor2);
