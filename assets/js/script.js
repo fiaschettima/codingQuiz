@@ -61,8 +61,16 @@ function quizTimer(){
 function openHighScores(){
     document.getElementById('highScores').style.width = "15vw";
 }
+
 function closeHighScores(){
     document.getElementById('highScores').style.width = '0vw';
 }
+// startup screen function and vars
+function startquiz(){
+    document.getElementById("startup-overlay").style.display = "none";
+    quizTimer();
+}
+// event listeners
 document.getElementById('openButton').addEventListener("click", openHighScores);
 document.getElementById('closeScore').addEventListener("click", closeHighScores);
+document.getElementById('start-button').addEventListener("click", startquiz);

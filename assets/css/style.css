@@ -13,6 +13,49 @@
 body{
     background-color: var(--mainColor2);
 }
+/* starting screen-------------------------------------------------------------------------------------- */
+#start-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    filter: blur(3vw);
+    opacity: 0.98;
+    margin: 0;
+}
+#startscreen-content{
+    position: absolute;
+    text-align: center;
+    left: 37%;
+    top: 37%;
+    color: #2CF6B3;
+    font-size: xx-large;
+    text-shadow: 
+        0 0 7px var(--mainColor1),
+        0 0 10px var(--mainColor1fade),
+        0 0 80px #b8fce5,
+        0 0 125px #ceffef;
+}
+#start-button{
+    background: none;
+    border: none;
+    color: var(--mainColor1);
+    cursor: pointer;
+    padding-top: 3em;
+    font-size: large;
+    text-shadow: 
+    0 0 7px var(--mainColor1),
+    0 0 10px var(--mainColor1fade),
+    0 0 80px #b8fce5,
+    0 0 125px #ceffef;
+}
+#start-button:hover{
+    text-shadow: 
+    0 0 15px var(--mainColor1),
+    0 0 40px var(--mainColor1fade),
+    0 0 100px #b8fce5,
+    0 0 150px #ceffef;
+}
 /* highscores-------------------------------------------------------------------------------------------------------------------- */
 #highScores{
     height: 100vw;
@@ -72,12 +115,4 @@ body{
 .answerButton:hover{
   background-color: var(--mainColor1fade);
   transition: 0.3s;
-}
-#start-button{
-    margin: auto;
-    background-color: var(--mainColor2);
-}
-#start-button:hover{
-    background-color: var(--mainColor4);
-    transition: 0.3s;
 }
