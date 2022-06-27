@@ -20,7 +20,7 @@ var quizQuestions = [
         c2: 'answer2',
         c3: 'answer3',
         c4: 'answer4',
-        answer: 2,
+        answer: 'answer3',
     },
     {
         Q: 'question two',
@@ -28,7 +28,7 @@ var quizQuestions = [
         c2: 'answer2',
         c3: 'answer3',
         c4: 'answer4',
-        answer: 2,
+        answer: 'answer3',
     },
     {
         Q: 'question three',
@@ -36,7 +36,7 @@ var quizQuestions = [
         c2: 'answer2',
         c3: 'answer3',
         c4: 'answer4',
-        answer: 2,
+        answer: 'answer3',
     },
     {
         Q: 'question four',
@@ -44,7 +44,7 @@ var quizQuestions = [
         c2: 'answer2',
         c3: 'answer3',
         c4: 'answer4',
-        answer: 2,
+        answer: 'answer3',
     }
 ];
 var currentQuestion = Math.floor(Math.random() * quizQuestions.length);
@@ -79,13 +79,18 @@ function startquiz(){
     Object.assign(startingContainer.style, startStyle);
     quizTimer();
     questionContent.textContent = quizQuestions[currentQuestion].Q;
-    Ans1.textContent = quizQuestions[currentQuestion].c1
-    Ans2.textContent = quizQuestions[currentQuestion].c2
-    Ans3.textContent = quizQuestions[currentQuestion].c3
-    Ans4.textContent = quizQuestions[currentQuestion].c4
+    Ans1.textContent = quizQuestions[currentQuestion].c1;
+    Ans2.textContent = quizQuestions[currentQuestion].c2;
+    Ans3.textContent = quizQuestions[currentQuestion].c3;
+    Ans4.textContent = quizQuestions[currentQuestion].c4;
 }
+
 // event listeners
 document.getElementById('openButton').addEventListener("click", openHighScores);
 document.getElementById('closeScore').addEventListener("click", closeHighScores);
 document.getElementById('start-button').addEventListener("click", startquiz);
-// add event listener for quizcontiner div 
+// add event listener for quizcontiner div
+quizContainer.addEventListener('click', function(e){
+    console.log(e.target.innerHTML);
+    var selectedAns = e.target;
+});
