@@ -62,7 +62,7 @@ function openHighScores(){
     document.getElementById('highScores').style.width = "15vw";
 }
 function closeHighScores(){
-    document.getElementById('highScores').style.width = '0px';
+    document.getElementById('highScores').style.width = '0vw';
 }
 document.getElementById('openButton').addEventListener("click", openHighScores);
 document.getElementById('closeScore').addEventListener("click", closeHighScores);

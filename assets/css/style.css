@@ -27,22 +27,30 @@ body{
 }
 #closeScore{
   /* figure out how to position it all the way to the right and center */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: larger;
 }
 #openButton{
+    margin-top: 10px;
     background: none;
-    color: inherit;
+    text-decoration: underline;
+    color: var(--mainColor1fade);
     border: none;
-    padding: 0;
-    font: inherit;
     cursor: pointer;
-    outline: inherit;
     margin-left: 1vw;
+    font-size: 20px;
 }
 /* Timer-------------------------------------------------------------------------------------------------------------------- */
 #timer{
     position: absolute;
     left: 90vw;
     top: 0;
+    padding-right: 10px;
 }
 
 /* Main Quiz-------------------------------------------------------------------------------------------------------------------- */
