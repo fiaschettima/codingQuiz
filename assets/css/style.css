@@ -102,7 +102,7 @@ body{
     background-color: var(--mainColor5);
     margin: auto;
     border: 1px solid black;
-    box-shadow: 10px 15px 5px var(--mainColor3);
+    box-shadow: 0px 0px 10px 10px var(--mainColor3);
     text-align: center;
     padding: 15px;
 }
