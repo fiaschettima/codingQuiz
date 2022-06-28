@@ -178,6 +178,7 @@ function gameOver(){
 }
 var scoreList = document.getElementById('scoreList');
 function loadHighScore(){
+  
 
    for(i=0 ; i < 5 ; i++){
     var player1 = [];
@@ -187,5 +188,8 @@ function loadHighScore(){
     newItem.appendChild(document.createTextNode(player1[i].initials + ' ' + player1[i].score));
     scoreList.appendChild(newItem);
    }
+  
+
+ 
 }
 loadHighScore();

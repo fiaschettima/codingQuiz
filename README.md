@@ -56,6 +56,11 @@ Test your knowledge or make your own quiz questions to change the difficulty up.
 ## Learning Points
     This project offered a chance to learn and gain a better understanding of JS functions and event listeners as well as using local storage.
 ---
+## Problems faced
+During the project my only issue I was un able to resolve was pulling the highscores and show new unique scores for each attempt.
+I do believe I did what was required but it's not in a real applicable state for use outside of this assignment.
+
+---
 ## Credits
 
 - [W3 Scools](https://www.w3schools.com/)
