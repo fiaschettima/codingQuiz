@@ -110,6 +110,7 @@ body{
 }
 .answerButton{
     margin: 20px;
+    width: 90%;
     display: block;
     padding: 8px;
     background-color: var(--mainColor1);
