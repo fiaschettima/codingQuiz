@@ -178,11 +178,14 @@ function gameOver(){
 }
 var scoreList = document.getElementById('scoreList');
 function loadHighScore(){
-    var player1 = JSON.parse(localStorage.getItem('playerInfo'));
+
+   for(i=0 ; i < 5 ; i++){
+    var player1 = [];
+    player1[i] = JSON.parse(localStorage.getItem('playerInfo'));
     console.log(player1);
     var newItem = document.createElement('li');
-    newItem.appendChild(document.createTextNode(player1.initials + ' ' + player1.score));
-
+    newItem.appendChild(document.createTextNode(player1[i].initials + ' ' + player1[i].score));
     scoreList.appendChild(newItem);
+   }
 }
 loadHighScore();

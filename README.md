@@ -29,6 +29,10 @@ To download the raw code of the page follow the steps below:
 2. Open your version of terminal and enter > git clone git@github.com:fiaschettima/SimpleJS-Password_Gen (Just paste the code you copied from previous step)
 3. After that the code is now on your local machine and you are free to copy it to your own repository and make changes
  ![Ex.S](./assets/images/codeCopy.png)
+
+
+
+
 ---
 
 
