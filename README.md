@@ -25,10 +25,12 @@ Here's a few quick links:
 ## Installation
 
 To download the raw code of the page follow the steps below:
-1. In the [coding quiz](https://github.com/fiaschettima/codingQuiz) Repository copy the Code  ![Ex.S](./Assets/Images/coptImg.png)
+1. In the [coding quiz](https://github.com/fiaschettima/codingQuiz) Repository copy the Code               
 2. Open your version of terminal and enter > git clone git@github.com:fiaschettima/SimpleJS-Password_Gen (Just paste the code you copied from previous step)
 3. After that the code is now on your local machine and you are free to copy it to your own repository and make changes
+ ![Ex.S](./assets/images/codeCopy.png)
 ---
+
 
 ## Code Snippets
 ![Code Ex](./assets/images/codeSnippet.png)
