@@ -96,9 +96,8 @@ var quizQuestions = [
         answer: 'In 1986',
     }
 ];
+// var currentQuestion
 
-var currentQuestion = Math.floor(Math.random() * quizQuestions.length);
-console.log( questionContent.textContent = quizQuestions[currentQuestion].Q);
 // Functions
 
 // timer
@@ -110,6 +109,7 @@ function quizTimer(){
         if(timeLeft === 0){
             // set action here for when time runs out 
             clearInterval(timeInterval);
+            gameOver();
         }
     },1000);
     // sets time to 1s since js runs in ms
@@ -123,9 +123,6 @@ function openHighScores(){
 function closeHighScores(){
     document.getElementById('highScores').style.width = '0vw';
 }
-// startup screen function and vars
-function changeQuestion(){
-}
 
 function startquiz(){
     var startingContainer = document.getElementById("startup-overlay");
@@ -134,6 +131,7 @@ function startquiz(){
     fillQuiz();
 }
 function fillQuiz(){
+    currentQuestion = Math.floor(Math.random() * quizQuestions.length);
     questionContent.textContent = quizQuestions[currentQuestion].Q;
     Ans1.textContent = quizQuestions[currentQuestion].c1;
     Ans2.textContent = quizQuestions[currentQuestion].c2;
@@ -148,22 +146,24 @@ document.getElementById('start-button').addEventListener("click", startquiz);
 quizContainer.addEventListener('click', function(e){
     var userAnswer = e.target.innerHTML;
     var userSelect = e.target;
-    if(userAnswer === quizQuestions[currentQuestion].answer){
-        score +=10;
-        scoreTrack.innerHTML = "Current Score: " + score;
-        quizQuestions.splice(currentQuestion,1);
-        if(quizQuestions.length >= 0){
-        fillQuiz();
-        }
-        console.log(quizQuestions);
-    }else{
-        quizQuestions.splice(currentQuestion,1);
-        timeLeft -= 10;
-        console.log(quizQuestions);
-        if(quizQuestions.length >= 0){
+    if(userSelect.matches('button')){
+        if(userAnswer === quizQuestions[currentQuestion].answer){
+            score +=10;
+            scoreTrack.innerHTML = "Current Score: " + score;
+            quizQuestions.splice(currentQuestion,1);
+            if(quizQuestions.length > 0){
             fillQuiz();
             }
+            console.log(quizQuestions);
+        }else{
+            quizQuestions.splice(currentQuestion,1);
+            timeLeft -= 10;
+            console.log(quizQuestions);
+            if(quizQuestions.length > 0){
+                fillQuiz();
+                }
     }
+}
 });
 function quizOver(){
     // if(quizQuestions[])
