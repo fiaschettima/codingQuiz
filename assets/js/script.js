@@ -94,7 +94,7 @@ var quizQuestions = [
         c3: 'In 1968',
         c4: 'In 1986',
         answer: 'In 1986',
-    },
+    }
 ];
 
 var currentQuestion = Math.floor(Math.random() * quizQuestions.length);
@@ -134,13 +134,11 @@ function startquiz(){
     fillQuiz();
 }
 function fillQuiz(){
-    if(quizQuestions.length >= 0){
     questionContent.textContent = quizQuestions[currentQuestion].Q;
     Ans1.textContent = quizQuestions[currentQuestion].c1;
     Ans2.textContent = quizQuestions[currentQuestion].c2;
     Ans3.textContent = quizQuestions[currentQuestion].c3;
     Ans4.textContent = quizQuestions[currentQuestion].c4;
-    }
 }
 // event listeners
 document.getElementById('openButton').addEventListener("click", openHighScores);
@@ -149,17 +147,22 @@ document.getElementById('start-button').addEventListener("click", startquiz);
 // add event listener for quizcontiner div
 quizContainer.addEventListener('click', function(e){
     var userAnswer = e.target.innerHTML;
+    var userSelect = e.target;
     if(userAnswer === quizQuestions[currentQuestion].answer){
         score +=10;
         scoreTrack.innerHTML = "Current Score: " + score;
         quizQuestions.splice(currentQuestion,1);
+        if(quizQuestions.length >= 0){
         fillQuiz();
-        console.log(quizQuestions)
+        }
+        console.log(quizQuestions);
     }else{
         quizQuestions.splice(currentQuestion,1);
         timeLeft -= 10;
-        console.log(quizQuestions)
-        fillQuiz();
+        console.log(quizQuestions);
+        if(quizQuestions.length >= 0){
+            fillQuiz();
+            }
     }
 });
 function quizOver(){
