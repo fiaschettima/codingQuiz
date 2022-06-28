@@ -172,10 +172,6 @@ function gameOver(){
         initials: userInfo,
         score: score + timeLeft,
     }
-    // if(quizQuestions[])
-    // add if quiz questions empty end quiz bring up highscores here
-    // add in start quiz if time = o ir array position less than 0 end quiz pop up prompy initialsEnt
-   
     localStorage.setItem('playerInfo', JSON.stringify(person));
     window.location.reload();
     
@@ -183,6 +179,10 @@ function gameOver(){
 var scoreList = document.getElementById('scoreList');
 function loadHighScore(){
     var player1 = JSON.parse(localStorage.getItem('playerInfo'));
+    var newItem = document.createElement('li');
+    newItem.appendChild(document.createTextNode(player1));
+
+    scoreList.appendChild(newItem);
     
     console.log(player1)
 }
