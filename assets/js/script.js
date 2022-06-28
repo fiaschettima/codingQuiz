@@ -14,6 +14,7 @@ var Ans1 = document.querySelector('#btn1');
 var Ans2 = document.querySelector('#btn2');
 var Ans3 = document.querySelector('#btn3');
 var Ans4 = document.querySelector('#btn4');
+// array of objects for each question
 var quizQuestions = [
     {
         Q: ' What is JavaScript',
@@ -123,13 +124,14 @@ function openHighScores(){
 function closeHighScores(){
     document.getElementById('highScores').style.width = '0vw';
 }
-
+// on quiz start remove start screen overlay start timer and executre fill quiz
 function startquiz(){
     var startingContainer = document.getElementById("startup-overlay");
     Object.assign(startingContainer.style, startStyle);
     quizTimer();
     fillQuiz();
 }
+// changes text content to new random question from the array of objects
 function fillQuiz(){
     currentQuestion = Math.floor(Math.random() * quizQuestions.length);
     questionContent.textContent = quizQuestions[currentQuestion].Q;
@@ -165,7 +167,7 @@ quizContainer.addEventListener('click', function(e){
     }
 }
 });
-
+// game over function collects user info and saves score to local storage
 function gameOver(){
     var userInfo = prompt('Enter your Initials to save your score');
     var person={
@@ -177,9 +179,13 @@ function gameOver(){
     
 }
 var scoreList = document.getElementById('scoreList');
+
+
+// supposed to add all local storage info to highscores list
 function loadHighScore(){
   
-
+// instead shows repeats of previous attempt I changed 5 to player.length didnt change anything wasnt sure where to go from here tried
+// alot of different solutions here I do see and understand why its working as it is but dont see how to easily change it
    for(i=0 ; i < 5 ; i++){
     var player1 = [];
     player1[i] = JSON.parse(localStorage.getItem('playerInfo'));
