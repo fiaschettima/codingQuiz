@@ -106,7 +106,7 @@ function quizTimer(){
     var timeInterval = setInterval(function(){
         timeLeft -=1;
         timerE1.textContent = "Time Left: " + timeLeft;
-        if(timeLeft === 0){
+        if(timeLeft === 0 || quizQuestions.length === 0){
             // set action here for when time runs out 
             clearInterval(timeInterval);
             gameOver();
@@ -165,7 +165,25 @@ quizContainer.addEventListener('click', function(e){
     }
 }
 });
-function quizOver(){
+
+function gameOver(){
+    var userInfo = prompt('Enter your Initials to save your score');
+    var person={
+        initials: userInfo,
+        score: score + timeLeft,
+    }
     // if(quizQuestions[])
     // add if quiz questions empty end quiz bring up highscores here
+    // add in start quiz if time = o ir array position less than 0 end quiz pop up prompy initialsEnt
+   
+    localStorage.setItem('playerInfo', JSON.stringify(person));
+    window.location.reload();
+    
 }
+var scoreList = document.getElementById('scoreList');
+function loadHighScore(){
+    var player1 = JSON.parse(localStorage.getItem('playerInfo'));
+    
+    console.log(player1)
+}
+loadHighScore();
