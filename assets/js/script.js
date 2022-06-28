@@ -117,7 +117,7 @@ function quizTimer(){
 
 // highscroes window open and close
 function openHighScores(){
-    document.getElementById('highScores').style.width = "15vw";
+    document.getElementById('highScores').style.width = "20vw";
 }
 
 function closeHighScores(){
@@ -179,11 +179,10 @@ function gameOver(){
 var scoreList = document.getElementById('scoreList');
 function loadHighScore(){
     var player1 = JSON.parse(localStorage.getItem('playerInfo'));
+    console.log(player1);
     var newItem = document.createElement('li');
-    newItem.appendChild(document.createTextNode(player1));
+    newItem.appendChild(document.createTextNode(player1.initials + ' ' + player1.score));
 
     scoreList.appendChild(newItem);
-    
-    console.log(player1)
 }
 loadHighScore();
